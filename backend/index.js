@@ -7,7 +7,7 @@ const supabaseConnect = require("./supabase/Supabase_Connect");
 const userRouter = require("./routes/routerUser")
 const codeRouter = require("./routes/codeRouter")
 const depotRouter = require("./routes/depotRouter")
-
+const helpsRouter = require("./routes/helpsRouter")
 
 
 
@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 });
 
 
-  
+  app.use('/helps',helpsRouter)
   app.use("/users", userRouter)
   app.use("/codes", codeRouter)
   app.use("/depots", depotRouter)
